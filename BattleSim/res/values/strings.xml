@@ -4,5 +4,9 @@
     <string name="app_name">BattleSim</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Welcome to Battle Sim!</string>
+    <string name="menu_character">Character</string>
+    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_login">Login</string>
 
 </resources>
