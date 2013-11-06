@@ -5,6 +5,8 @@ import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 public class MainActivity extends Activity {
 
@@ -12,6 +14,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Parse.initialize(this, "R3nUsxvMwmHkVVljPSnvcMUP3fe3HkbDPIb4zvSa", "qi4iIY2rgn3bdEIP6lnvZm9r3DbH8mCCo4We7z7l");
+		ParseAnalytics.trackAppOpened(getIntent());
 	}
 
 	@Override
@@ -22,7 +26,6 @@ public class MainActivity extends Activity {
 	}
 	
 	public void openLogin(View view){
-		Intent intent = new Intent(this, LoginActivity.class);
-		startActivity(intent);
+		startActivity(new Intent(this, LoginActivity.class));
 	}
 }
