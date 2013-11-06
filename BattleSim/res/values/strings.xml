@@ -8,5 +8,12 @@
     <string name="menu_leaderboard">Leaderboard</string>
     <string name="menu_exit">Exit</string>
     <string name="menu_login">Login</string>
+    <string name="title_activity_logger">Logger</string>
+    <string name="menu_signup">Sign Up</string>
+    <string name="login_email">E-mail Address</string>
+    <string name="login_pass">Password</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="welcome">You logged in! You\'re AWESOME!</string>
+    <string name="menu_fb">Login through Facebook</string>
 
 </resources>
