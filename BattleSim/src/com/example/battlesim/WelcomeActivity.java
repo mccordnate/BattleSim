@@ -1,8 +1,11 @@
 package com.example.battlesim;
 
+import com.parse.ParseUser;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class WelcomeActivity extends Activity {
 
@@ -18,5 +21,19 @@ public class WelcomeActivity extends Activity {
 		getMenuInflater().inflate(R.menu.welcome, menu);
 		return true;
 	}
-
+	
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch (item.getItemId()) {
+        case R.id.logout:
+            logout();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+	}
+	
+	public void logout(){
+		ParseUser.logOut();
+		finish();
+	}
 }

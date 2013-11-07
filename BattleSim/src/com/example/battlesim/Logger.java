@@ -31,6 +31,7 @@ public class Logger extends Activity {
 
 		username = (EditText) findViewById(R.id.username);
 		pass = (EditText) findViewById(R.id.pass);
+		
 	}
 
 	@Override

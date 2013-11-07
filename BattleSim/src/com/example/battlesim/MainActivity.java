@@ -8,6 +8,7 @@ import android.view.Menu;
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
 import com.parse.ParseFacebookUtils;
+import com.parse.ParseUser;
 
 public class MainActivity extends Activity {
 
@@ -30,7 +31,14 @@ public class MainActivity extends Activity {
 	
 	
 	public void openLogin(View view){
+		ParseUser currentUser = ParseUser.getCurrentUser();
+	    if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
+	        // Go to the user info activity
+	        startActivity(new Intent(this, WelcomeActivity.class));
+	    }
+	    else{
 		startActivity(new Intent(this, Logger.class));
+	    }
 	}
 	
 	public void exit(View view){
