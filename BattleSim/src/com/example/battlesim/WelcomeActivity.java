@@ -12,7 +12,15 @@ public class WelcomeActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_welcome);
+		
+		
+		if(!ParseUser.getCurrentUser().has("char")){
+			setContentView(R.layout.activity_welcome);
+		}
+		else{
+			setContentView(R.layout.activity_welcomechar);
+			//((TextView) findViewById(R.id.textView2)).setText(ParseUser.getCurrentUser().getUsername().toString());
+		}
 	}
 
 	@Override

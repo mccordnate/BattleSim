@@ -1,24 +1,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/scroll"
+    android:gravity="top"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Logger" >
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="93dp"
+        android:onClick="fbook"
+        android:text="@string/menu_fb" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="22dp"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
         android:ems="10"
+        android:hint="@string/login_email"
         android:inputType="textEmailAddress"
-        android:hint="@string/login_email">
+        android:textColorHint="#452800" >
 
         <requestFocus />
     </EditText>
@@ -27,39 +41,30 @@
         android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/username"
         android:layout_below="@+id/username"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="@string/login_pass"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/menu_signup" 
-        android:onClick="signUp"/>
+        android:ems="10"
+        android:hint="@string/login_pass"
+        android:inputType="textPassword"
+        android:textColorHint="#452800" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
+        android:layout_below="@+id/pass"
         android:layout_centerHorizontal="true"
-        android:text="@string/menu_login"
-        android:onClick="login"/>
+        android:layout_marginTop="38dp"
+        android:onClick="login"
+        android:text="@string/menu_login" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:text="@string/menu_fb"
-        android:onClick="fbook"/>
+        android:onClick="signUp"
+        android:text="@string/menu_signup" />
 
 </RelativeLayout>

@@ -13,7 +13,9 @@
     <string name="login_email">E-mail Address</string>
     <string name="login_pass">Password</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
-    <string name="welcome">You logged in! You\'re AWESOME!</string>
+    <string name="welcome">Welcome to the game! Please make a character</string>
     <string name="menu_fb">Login through Facebook</string>
+    <string name="menu_createChar">Create Character</string>
+    <string name="welcome_back">Glad to see you again!</string>
 
 </resources>

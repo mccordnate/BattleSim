@@ -28,11 +28,7 @@
         <activity
             android:name="com.example.battlesim.Logger"
             android:label="@string/title_activity_login"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
-        <activity
-            android:name="com.example.battlesim.Logger"
-            android:label="@string/title_activity_logger" >
+            android:windowSoftInputMode="adjustResize|stateVisible">
         </activity>
         <activity
             android:name="com.example.battlesim.WelcomeActivity"
