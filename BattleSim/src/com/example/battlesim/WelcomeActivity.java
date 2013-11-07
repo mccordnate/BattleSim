@@ -44,4 +44,9 @@ public class WelcomeActivity extends Activity {
 		ParseUser.logOut();
 		finish();
 	}
+	
+	public void createChar() {
+		Character character = new Character(ParseUser.getCurrentUser().getUsername(), 5, 5, 5);
+		ParseUser.getCurrentUser().add("character", character);
+	}
 }
