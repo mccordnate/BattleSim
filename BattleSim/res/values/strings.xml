@@ -18,5 +18,7 @@
     <string name="menu_createChar">Create Character</string>
     <string name="welcome_back">Glad to see you again!</string>
     <string name="menu_deleteChar">Delete Character</string>
+    <string name="menu_logout">Log out</string>
+    <string name="title_activity_character_create">CharacterCreate</string>
 
 </resources>

@@ -13,22 +13,31 @@
     tools:context=".Logger" >
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/pass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="93dp"
-        android:onClick="fbook"
-        android:text="@string/menu_fb" />
+        android:layout_marginTop="38dp"
+        android:onClick="login"
+        android:text="@string/menu_login" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:onClick="signUp"
+        android:text="@string/menu_signup" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="201dp"
         android:ems="10"
         android:hint="@string/login_email"
         android:inputType="textEmailAddress"
@@ -49,22 +58,13 @@
         android:textColorHint="#452800" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pass"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:onClick="login"
-        android:text="@string/menu_login" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:onClick="signUp"
-        android:text="@string/menu_signup" />
+        android:layout_marginTop="93dp"
+        android:text="@string/menu_fb"
+        android:onClick="fbook"/>
 
 </RelativeLayout>

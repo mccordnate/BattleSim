@@ -24,4 +24,8 @@
         <item name="android:padding">16dp</item>
     </style>
 
+    <style name="Fullscreen" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>

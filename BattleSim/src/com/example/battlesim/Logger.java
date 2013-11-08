@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.util.Log;
 import android.view.Menu;
+import android.view.WindowManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class Logger extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logger);
+		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 		username = (EditText) findViewById(R.id.username);
 		pass = (EditText) findViewById(R.id.pass);
