@@ -1,13 +1,18 @@
 package com.example.battlesim;
 
+import java.util.List;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -22,17 +27,15 @@ public class WelcomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
-		query.getInBackground("a4fCOTOka0", new GetCallback<ParseObject>() {
-		  public void done(ParseObject parseCharBack, ParseException e) {
-		    if (e == null) {
-		    	if(parseCharBack.getString("username").equals(ParseUser.getCurrentUser().getUsername())){
-		    		setContentView(R.layout.activity_welcomechar);
-		    	}
-		    	else{
-		    		setContentView(R.layout.activity_welcome);
-		    	}
+		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+		query.getFirstInBackground(new GetCallback<ParseObject>() {
+		  public void done(ParseObject object, ParseException e) {
+		    if (object == null) {
+		      setContentView(R.layout.activity_welcome);
 		    } else {
-		      Log.d("Error","Something really bad happened");// something went wrong
+		    	setContentView(R.layout.activity_welcomechar);
+	    		TextView tv = (TextView) findViewById(R.id.textView2);
+	    		tv.setText(object.getString("name").toString());
 		    }
 		  }
 		});
@@ -71,22 +74,34 @@ public class WelcomeActivity extends Activity {
 		parseChar.put("exp",character.getExp());
 		parseChar.put("level",character.getLevel());
 		parseChar.put("username",ParseUser.getCurrentUser().getUsername());
-		parseChar.saveInBackground();
+		try {
+			parseChar.save();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		startActivity(new Intent(WelcomeActivity.this, WelcomeActivity.class));
+		finish();
 	}
 	
-	public void disp(View view){
+	public void deleteChar(View view){
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
-		query.getInBackground("a4fCOTOka0", new GetCallback<ParseObject>() {
-		  public void done(ParseObject parseCharBack, ParseException e) {
-		    if (e == null) {
-		    	Toast.makeText(getApplicationContext(), parseCharBack.getString("username"), Toast.LENGTH_LONG).show();
-		    	
+		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+		query.getFirstInBackground(new GetCallback<ParseObject>() {
+		  public void done(ParseObject object, ParseException e) {
+		    if (object == null) {
+		      Log.d("deleteChar", "The getFirst request failed.");
 		    } else {
-		      Log.d("Error","Something really bad happened");// something went wrong
+		      try {
+				object.delete();
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		      startActivity(new Intent(WelcomeActivity.this, WelcomeActivity.class));
+		      finish();
 		    }
 		  }
 		});
-		
-		//Toast.makeText(getApplicationContext(), parseChar.getInt("str"), Toast.LENGTH_LONG);
 	}
 }

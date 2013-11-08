@@ -17,5 +17,6 @@
     <string name="menu_fb">Login through Facebook</string>
     <string name="menu_createChar">Create Character</string>
     <string name="welcome_back">Glad to see you again!</string>
+    <string name="menu_deleteChar">Delete Character</string>
 
 </resources>

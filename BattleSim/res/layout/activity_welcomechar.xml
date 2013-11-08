@@ -19,8 +19,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
-        android:text="username goes here"
+        android:layout_marginTop="24dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/menu_deleteChar"
+        android:onClick="deleteChar"/>
 
 </RelativeLayout>
