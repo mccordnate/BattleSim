@@ -1,26 +1,41 @@
 package com.example.battlesim;
 
-import com.parse.ParseUser;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import com.parse.GetCallback;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.ParseException;
 
 public class WelcomeActivity extends Activity {
+	private ParseObject parseChar = new ParseObject("Character");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		
-		if(!ParseUser.getCurrentUser().has("char")){
-			setContentView(R.layout.activity_welcome);
-		}
-		else{
-			setContentView(R.layout.activity_welcomechar);
-			//((TextView) findViewById(R.id.textView2)).setText(ParseUser.getCurrentUser().getUsername().toString());
-		}
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
+		query.getInBackground("a4fCOTOka0", new GetCallback<ParseObject>() {
+		  public void done(ParseObject parseCharBack, ParseException e) {
+		    if (e == null) {
+		    	if(parseCharBack.getString("username").equals(ParseUser.getCurrentUser().getUsername())){
+		    		setContentView(R.layout.activity_welcomechar);
+		    	}
+		    	else{
+		    		setContentView(R.layout.activity_welcome);
+		    	}
+		    } else {
+		      Log.d("Error","Something really bad happened");// something went wrong
+		    }
+		  }
+		});
 	}
 
 	@Override
@@ -45,8 +60,33 @@ public class WelcomeActivity extends Activity {
 		finish();
 	}
 	
-	public void createChar() {
-		Character character = new Character(ParseUser.getCurrentUser().getUsername(), 5, 5, 5);
-		ParseUser.getCurrentUser().add("character", character);
+	public void createChar(View view) {
+		Character character = new Character("test", 5, 5, 5);
+		parseChar.put("user",ParseUser.getCurrentUser());
+		parseChar.put("name",character.getName());
+		parseChar.put("str",character.getStr());
+		parseChar.put("agi",character.getAgi());
+		parseChar.put("def",character.getDef());
+		parseChar.put("hp",character.getHp());
+		parseChar.put("exp",character.getExp());
+		parseChar.put("level",character.getLevel());
+		parseChar.put("username",ParseUser.getCurrentUser().getUsername());
+		parseChar.saveInBackground();
+	}
+	
+	public void disp(View view){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
+		query.getInBackground("a4fCOTOka0", new GetCallback<ParseObject>() {
+		  public void done(ParseObject parseCharBack, ParseException e) {
+		    if (e == null) {
+		    	Toast.makeText(getApplicationContext(), parseCharBack.getString("username"), Toast.LENGTH_LONG).show();
+		    	
+		    } else {
+		      Log.d("Error","Something really bad happened");// something went wrong
+		    }
+		  }
+		});
+		
+		//Toast.makeText(getApplicationContext(), parseChar.getInt("str"), Toast.LENGTH_LONG);
 	}
 }

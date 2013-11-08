@@ -12,4 +12,32 @@ public class Character {
 		this.def = d;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public int getStr() {
+		return str;
+	}
+
+	public int getAgi() {
+		return agi;
+	}
+
+	public int getDef() {
+		return def;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public int getExp() {
+		return exp;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
 }
