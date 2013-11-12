@@ -20,5 +20,10 @@
     <string name="menu_deleteChar">Delete Character</string>
     <string name="menu_logout">Log out</string>
     <string name="title_activity_character_create">CharacterCreate</string>
+    <string name="create_name">Name:</string>
+    <string name="create_str">Strength:</string>
+    <string name="create_agi">Agility:</string>
+    <string name="create_def">Defense:</string>
+    <string name="create_submit">Submit</string>
 
 </resources>

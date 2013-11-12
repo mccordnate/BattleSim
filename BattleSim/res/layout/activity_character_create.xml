@@ -9,8 +9,230 @@
     tools:context=".CharacterCreate" >
 
     <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/create_name" />
+
+    <EditText
+        android:id="@+id/namebox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/name"
+        android:layout_alignBottom="@+id/name"
+        android:layout_marginLeft="43dp"
+        android:layout_toRightOf="@+id/name"
+        android:inputType="text"
+        android:maxLength="16"
+        android:ems="10" >
+        
+       
+    </EditText>
+    
+    <TextView 
+        android:id="@+id/stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="40dp"
+        android:text="stats go here"/>
+    
+    <TextView
+        android:id="@+id/str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stats"
+        android:layout_marginTop="20dp"
+        android:text="@string/create_str"
+        />
+    
+    <Button 
+        android:id="@+id/strMinus"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="10dp"
+		android:layout_below="@+id/stats"
+        android:layout_alignBottom="@+id/str"
+        android:layout_toRightOf="@+id/str"
+        android:text="-"
+        android:textSize="10pt"
+        android:padding="2dp"
+        android:maxHeight="8dp"
+        android:maxWidth="8dp"
+        android:onClick="strMinus"
+        />
+            
+	<EditText 
+	    android:id="@+id/strbox"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@+id/strMinus"
+	    android:layout_alignBottom="@+id/str"
+	    android:layout_marginTop="20dp"
+	    android:layout_marginLeft="20dp"
+	    android:inputType="number"
+	    android:clickable="false" 
+    	android:cursorVisible="false" 
+    	android:focusable="false" 
+    	android:focusableInTouchMode="false"
+    	android:text="0"
+	    />
+	
+	<Button 
+        android:id="@+id/strPlus"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="30dp"
+		android:layout_marginTop="10dp"
+		android:layout_below="@+id/stats"
+        android:layout_alignBottom="@+id/strbox"
+        android:layout_toRightOf="@+id/strbox"
+        android:text="+"
+        android:textSize="10pt"
+        android:padding="2dp"
+        android:maxHeight="8dp"
+        android:maxWidth="8dp"
+        android:onClick="strPlus"
+        />
+	
+	<TextView
+        android:id="@+id/agi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/str"
+        android:layout_marginTop="20dp"
+        android:text="@string/create_agi"
+        />
+	
+	<Button 
+        android:id="@+id/agiMinus"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="10dp"
+		android:layout_below="@+id/strMinus"
+        android:layout_alignBottom="@+id/agi"
+        android:layout_toRightOf="@+id/agi"
+        android:text="-"
+        android:textSize="10pt"
+        android:padding="2dp"
+        android:maxHeight="8dp"
+        android:maxWidth="8dp"
+        android:onClick="agiMinus"
+        />
+        
+	<EditText 
+	    android:id="@+id/agibox"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@+id/agi"
+	    android:layout_alignBottom="@+id/agi"
+	    android:layout_marginTop="20dp"
+	    android:layout_marginLeft="100dp"
+	    android:inputType="number"
+	    android:clickable="false" 
+    	android:cursorVisible="false" 
+    	android:focusable="false" 
+    	android:focusableInTouchMode="false"
+    	android:text="0"
+	    />
+	
+	<Button 
+        android:id="@+id/agiPlus"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="30dp"
+		android:layout_marginTop="10dp"
+		android:layout_below="@+id/strPlus"
+        android:layout_alignBottom="@+id/agibox"
+        android:layout_toRightOf="@+id/agibox"
+        android:text="+"
+        android:textSize="10pt"
+        android:padding="2dp"
+        android:maxHeight="4dp"
+        android:maxWidth="4dp"
+        android:onClick="agiPlus"
+        />
+	
+	<TextView
+        android:id="@+id/def"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agi"
+        android:layout_marginTop="20dp"
+        android:text="@string/create_def"
+        />
+	
+	<Button 
+        android:id="@+id/defMinus"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="10dp"
+		android:layout_below="@+id/agiMinus"
+		android:layout_alignBottom="@+id/def"
+        android:layout_toRightOf="@+id/def"
+        android:text="-"
+        android:textSize="10pt"
+        android:padding="2dp"
+        android:maxHeight="4dp"
+        android:maxWidth="4dp"
+        android:onClick="defMinus"
+        
+        />
+        
+	<EditText 
+	    android:id="@+id/defbox"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@+id/def"
+	    android:layout_alignBottom="@+id/def"
+	    android:layout_marginTop="20dp"
+	    android:layout_marginLeft="100dp"
+	    android:inputType="number"
+	    android:clickable="false" 
+    	android:cursorVisible="false" 
+    	android:focusable="false" 
+    	android:focusableInTouchMode="false"
+    	android:text="0"
+	    />
+	
+	<Button 
+        android:id="@+id/defPlus"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="30dp"
+		android:layout_marginTop="10dp"
+		android:layout_below="@+id/agiPlus"
+        android:layout_alignBottom="@+id/defbox"
+        android:layout_toRightOf="@+id/defbox"
+        android:text="+"
+        android:textSize="10pt"
+        android:padding="2dp"
+        android:maxHeight="8dp"
+        android:maxWidth="8dp"
+        android:onClick="defPlus"
+        />
+
+	<Button
+	    android:id="@+id/submitChar"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="375dp"
+	    android:text="@string/create_submit"
+	    android:onClick="submitChar"
+	    />
 
 </RelativeLayout>

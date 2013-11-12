@@ -64,23 +64,7 @@ public class WelcomeActivity extends Activity {
 	}
 	
 	public void createChar(View view) {
-		Character character = new Character("test", 5, 5, 5);
-		parseChar.put("user",ParseUser.getCurrentUser());
-		parseChar.put("name",character.getName());
-		parseChar.put("str",character.getStr());
-		parseChar.put("agi",character.getAgi());
-		parseChar.put("def",character.getDef());
-		parseChar.put("hp",character.getHp());
-		parseChar.put("exp",character.getExp());
-		parseChar.put("level",character.getLevel());
-		parseChar.put("username",ParseUser.getCurrentUser().getUsername());
-		try {
-			parseChar.save();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		startActivity(new Intent(WelcomeActivity.this, WelcomeActivity.class));
+		startActivity(new Intent(this, CharacterCreate.class));
 		finish();
 	}
 	

@@ -105,9 +105,11 @@ public class Logger extends Activity {
 			    } else if (user.isNew()) {
 			      Log.d("MyApp", "User signed up and logged in through Facebook!");
 			      startActivity(new Intent(Logger.this, WelcomeActivity.class));
+			      finish();
 			    } else {
 			      Log.d("MyApp", "User logged in through Facebook!");
 			      startActivity(new Intent(Logger.this, WelcomeActivity.class));
+			      finish();	
 			    }
 			  }
 			});
