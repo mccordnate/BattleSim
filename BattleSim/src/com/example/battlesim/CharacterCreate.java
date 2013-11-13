@@ -111,6 +111,7 @@ public class CharacterCreate extends Activity {
 		
 		Character character = new Character(nameBox.getText().toString(), Integer.parseInt((strBox.getText().toString())), Integer.parseInt((agiBox.getText().toString())), Integer.parseInt((defBox.getText().toString())));
 		startActivity(new Intent(this, WelcomeActivity.class));
+		statInit = 15;
 		finish();
 		}
 	}

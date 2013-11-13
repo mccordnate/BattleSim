@@ -1,5 +1,7 @@
 package com.example.battlesim;
 
+import java.util.Date;
+
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -7,7 +9,8 @@ import com.parse.ParseUser;
 public class Character {
 	
 	private String name;
-	private int str, agi, def, hp=20, exp=0, level=1, wins = 0, losses = 0;
+	private int str, agi, def, hp=20, exp=0, level=1, wins = 0, losses = 0, energy = 3;
+	private Date lastEnergyUse = new Date(0);
 	
 	public Character(String n, int s, int a, int d){
 		this.name = n;
@@ -26,7 +29,8 @@ public class Character {
 		parseChar.put("exp",exp);
 		parseChar.put("level",level);
 		parseChar.put("username",ParseUser.getCurrentUser().getUsername());
-		
+		parseChar.put("energy",energy);
+		parseChar.put("lastEnergyUse",lastEnergyUse);
 		try {
 			parseChar.save();
 		} catch (ParseException e) {

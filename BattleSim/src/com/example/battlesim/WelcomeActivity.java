@@ -34,7 +34,7 @@ public class WelcomeActivity extends Activity {
 		      setContentView(R.layout.activity_welcome);
 		    } else {
 		    	setContentView(R.layout.activity_welcomechar);
-	    		TextView tv = (TextView) findViewById(R.id.textView2);
+	    		TextView tv = (TextView) findViewById(R.id.charName);
 	    		tv.setText(object.getString("name").toString());
 		    }
 		  }
@@ -66,6 +66,10 @@ public class WelcomeActivity extends Activity {
 	public void createChar(View view) {
 		startActivity(new Intent(this, CharacterCreate.class));
 		finish();
+	}
+	
+	public void train(View view){
+		startActivity(new Intent(this, TrainingActivity.class));
 	}
 	
 	public void deleteChar(View view){

@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TrainingActivity" >
+
+    
+    
+    <TextView
+        android:id="@+id/energy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/train_energy" />
+    
+    <TextView
+        android:id="@+id/numOfEnergy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/energy"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:text="" />
+    
+    <TextView
+        android:id="@+id/moreEnergy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/energy"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/train_more_energy" />
+    
+    <TextView
+        android:id="@+id/refillTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/energy"
+        android:layout_toRightOf="@+id/moreEnergy"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="" />
+    
+    <Button 
+        android:id="@+id/genericTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/refillTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:onClick="genericTrain"
+        android:text="Generic Training"/>
+
+</RelativeLayout>

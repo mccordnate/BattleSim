@@ -13,6 +13,11 @@ import com.parse.ParseUser;
 
 public class MainActivity extends Activity {
 
+	
+	/*onCreate initializes the parse codes as well as the Facebook codes
+	 * that allow the app to store data on Parse and use Facebook
+	 * authentication
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,10 +39,10 @@ public class MainActivity extends Activity {
 	public void openLogin(View view){
 		ParseUser currentUser = ParseUser.getCurrentUser();
 	    if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
-	        // Go to the user info activity
+	        // If user is already logged in through Facebook, skip login screen
 	      startActivity(new Intent(this, WelcomeActivity.class));
 	    }
-	    else{
+	    else{//else, go to login screen
 		startActivity(new Intent(this, Logger.class));
 	    }
 	}
