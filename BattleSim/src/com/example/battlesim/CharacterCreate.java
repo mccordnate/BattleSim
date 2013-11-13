@@ -1,14 +1,16 @@
 package com.example.battlesim;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CharacterCreate extends Activity {
-	private int statInit = 15;
+	private static int statInit = 15;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +28,14 @@ public class CharacterCreate extends Activity {
 	
 	public void statSet(){
 		TextView stats = (TextView) this.findViewById(R.id.stats);
-		stats.setText(statInit);
+		stats.setText(Integer.toString(statInit));
 	}
 	
 	public void strMinus(View view){
 		EditText strBox = (EditText) this.findViewById(R.id.strbox);
 		int strInt = Integer.parseInt((strBox.getText().toString()));
 		if(strInt>0){
-		strBox.setText(strInt - 1);
+		strBox.setText(Integer.toString(strInt - 1));
 		statInit++;
 		statSet();
 		}
@@ -43,7 +45,7 @@ public class CharacterCreate extends Activity {
 		EditText strBox = (EditText) this.findViewById(R.id.strbox);
 		int strInt = Integer.parseInt((strBox.getText().toString()));
 		if(statInit>0){
-		strBox.setText(strInt + 1);
+		strBox.setText(Integer.toString(strInt + 1));
 		statInit--;
 		statSet();
 		}
@@ -53,7 +55,7 @@ public class CharacterCreate extends Activity {
 		EditText agiBox = (EditText) this.findViewById(R.id.agibox);
 		int agiInt = Integer.parseInt((agiBox.getText().toString()));
 		if(agiInt>0){
-		agiBox.setText(agiInt - 1);
+		agiBox.setText(Integer.toString(agiInt - 1));
 		statInit++;
 		statSet();
 		}
@@ -63,7 +65,7 @@ public class CharacterCreate extends Activity {
 		EditText agiBox = (EditText) this.findViewById(R.id.agibox);
 		int agiInt = Integer.parseInt((agiBox.getText().toString()));
 		if(statInit>0){
-		agiBox.setText(agiInt + 1);
+		agiBox.setText(Integer.toString(agiInt + 1));
 		statInit--;
 		statSet();
 		}
@@ -73,7 +75,7 @@ public class CharacterCreate extends Activity {
 		EditText defBox = (EditText) this.findViewById(R.id.defbox);
 		int defInt = Integer.parseInt((defBox.getText().toString()));
 		if(defInt>0){
-		defBox.setText(defInt - 1);
+		defBox.setText(Integer.toString(defInt - 1));
 		statInit++;
 		statSet();
 		}
@@ -82,21 +84,35 @@ public class CharacterCreate extends Activity {
 	public void defPlus(View view){
 		EditText defBox = (EditText) this.findViewById(R.id.defbox);
 		int defInt = Integer.parseInt((defBox.getText().toString()));
-		if(defInt>0){
-		defBox.setText(defInt + 1);
+		if(statInit>0){
+		defBox.setText(Integer.toString(defInt + 1));
 		statInit--;
 		statSet();
 		}
 	}
 	
 	public void submitChar(View view){
-		EditText nameBox = (EditText) this.findViewById(R.id.name);
+		boolean go = true;
+		TextView stats = (TextView) this.findViewById(R.id.stats);
+		if(Integer.parseInt(stats.getText().toString()) > 0){
+			Toast.makeText(getApplicationContext(), "Please use all stat points", Toast.LENGTH_LONG).show();
+			go = false;
+		}
+		EditText nameBox = (EditText) this.findViewById(R.id.namebox);
+		if(nameBox.getText().toString().length()<3){
+			Toast.makeText(getApplicationContext(), "Please enter a name at least 3 characters long", Toast.LENGTH_LONG).show();
+			go = false;
+		}
+		
+		if(go){
 		EditText strBox = (EditText) this.findViewById(R.id.strbox);
 		EditText agiBox = (EditText) this.findViewById(R.id.agibox);
 		EditText defBox = (EditText) this.findViewById(R.id.defbox);
 		
 		Character character = new Character(nameBox.getText().toString(), Integer.parseInt((strBox.getText().toString())), Integer.parseInt((agiBox.getText().toString())), Integer.parseInt((defBox.getText().toString())));
-			
+		startActivity(new Intent(this, WelcomeActivity.class));
+		finish();
+		}
 	}
 
 }
