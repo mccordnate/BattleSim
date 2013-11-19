@@ -29,5 +29,6 @@
     <string name="train_energy">Energy:</string>
     <string name="train_more_energy">More energy in:</string>
     <string name="menu_train">Train</string>
+    <string name="train_refill_time">Energy full!</string>
 
 </resources>

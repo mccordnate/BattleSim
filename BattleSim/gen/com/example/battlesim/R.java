@@ -319,10 +319,10 @@ containing a value of this type.
         public static final int welcome=0x7f090005;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f07003a;
+        public static final int action_forgot_password=0x7f07003b;
         public static final int action_settings=0x7f07001a;
-        public static final int action_sign_in_register=0x7f070038;
-        public static final int action_sign_in_short=0x7f070039;
+        public static final int action_sign_in_register=0x7f070039;
+        public static final int action_sign_in_short=0x7f07003a;
         public static final int app_name=0x7f070019;
         public static final int com_facebook_choose_friends=0x7f07000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f070000;
@@ -354,14 +354,14 @@ containing a value of this type.
         public static final int create_name=0x7f07002c;
         public static final int create_str=0x7f07002d;
         public static final int create_submit=0x7f070030;
-        public static final int error_field_required=0x7f07003f;
-        public static final int error_incorrect_password=0x7f07003e;
-        public static final int error_invalid_email=0x7f07003c;
-        public static final int error_invalid_password=0x7f07003d;
+        public static final int error_field_required=0x7f070040;
+        public static final int error_incorrect_password=0x7f07003f;
+        public static final int error_invalid_email=0x7f07003d;
+        public static final int error_invalid_password=0x7f07003e;
         public static final int hello_world=0x7f07001b;
         public static final int login_email=0x7f070022;
         public static final int login_pass=0x7f070023;
-        public static final int login_progress_signing_in=0x7f07003b;
+        public static final int login_progress_signing_in=0x7f07003c;
         public static final int menu_character=0x7f07001c;
         public static final int menu_createChar=0x7f070027;
         public static final int menu_deleteChar=0x7f070029;
@@ -374,15 +374,16 @@ containing a value of this type.
         public static final int menu_train=0x7f070034;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f070036;
-        public static final int prompt_password=0x7f070037;
+        public static final int prompt_email=0x7f070037;
+        public static final int prompt_password=0x7f070038;
         public static final int title_activity_character_create=0x7f07002b;
         public static final int title_activity_logger=0x7f070020;
-        public static final int title_activity_login=0x7f070035;
+        public static final int title_activity_login=0x7f070036;
         public static final int title_activity_training=0x7f070031;
         public static final int title_activity_welcome=0x7f070024;
         public static final int train_energy=0x7f070032;
         public static final int train_more_energy=0x7f070033;
+        public static final int train_refill_time=0x7f070035;
         public static final int welcome=0x7f070025;
         public static final int welcome_back=0x7f070028;
     }

@@ -14,7 +14,7 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
+import com.parse.ParseUser; 
 
 public class TrainingActivity extends Activity {
 	public static CountDownTimer counter;
@@ -24,10 +24,7 @@ public class TrainingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_training);
-
-		
 		getTime();
-		
 		
 	}
 
@@ -36,30 +33,6 @@ public class TrainingActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.training, menu);
 		return true;
-	}
-	
-	public class MyCount extends CountDownTimer{
-
-		public MyCount(long millisInFuture, long countDownInterval) {
-			super(millisInFuture, countDownInterval);
-			// TODO Auto-generated constructor stub
-			
-		}
-
-		@Override
-		public void onFinish() {
-			// TODO Auto-generated method stub
-			getTime();
-		}
-
-		@Override
-		public void onTick(long untilFinished) {
-			// TODO Auto-generated method stub
-			
-			refill.setText(Long.toString(untilFinished/1000));
-			
-		}
-		
 	}
 
 	public void getTime() {
@@ -71,34 +44,33 @@ public class TrainingActivity extends Activity {
 					final TextView timer = (TextView) findViewById(R.id.refillTime);
 					TextView numOfEnergy = (TextView) findViewById(R.id.numOfEnergy);
 					int currentE = object.getInt("energy");
-					int startE = currentE;
 					Date lastDate = object.getDate("lastEnergyUse");
 					while (lastDate.getTime() + 20000 < System.currentTimeMillis() && currentE < 3) {
 						currentE++;
 						lastDate = new Date(lastDate.getTime()+20000);
 					}
 					
+					numOfEnergy.setText(String.valueOf(currentE));
 					
-					if(currentE != 3){
-						CountDownTimer Count = new CountDownTimer(System.currentTimeMillis() + 20000 - lastDate.getTime(), 1000) {
+					if(currentE < 3){
+						if(timer.getText().toString().equals("Energy full!")){
+						CountDownTimer Count = new CountDownTimer(20000 + lastDate.getTime() - System.currentTimeMillis(), 1000) {
 						    public void onTick(long millisUntilFinished) {
 						        timer.setText(Long.toString(millisUntilFinished/1000));
 						    }
 
 						    public void onFinish() {
+						    	timer.setText("Energy full!");
 						        getTime();
 						    }
 						};
-
 						Count.start();
-						
-					//TrainingActivity.MyCount counter = new MyCount(System.currentTimeMillis() - lastDate.getTime(), 1000);
-					//counter.start();
-					}else{
+						}
+					}else if(currentE == 3){
 						timer.setText("Energy full!");
 					}
 					
-					numOfEnergy.setText(String.valueOf(currentE));
+					
 					object.put("energy", currentE);
 					object.put("lastEnergyUsed", lastDate);
 					try {
@@ -120,7 +92,7 @@ public class TrainingActivity extends Activity {
 			public void done(ParseObject object, ParseException e) {
 				if (object != null) {
 					int currentE = object.getInt("energy");
-					if (currentE < 0) {
+					if (currentE <= 0) {
 						Toast.makeText(getApplicationContext(),
 								"Uh oh! You're out of energy!",
 								Toast.LENGTH_LONG).show();
