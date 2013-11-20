@@ -30,5 +30,13 @@
     <string name="train_more_energy">More energy in:</string>
     <string name="menu_train">Train</string>
     <string name="train_refill_time">Energy full!</string>
+    <string name="train_weights">Lift Weights</string>
+    <string name="train_laps">Run Laps</string>
+    <string name="train_dodgeball">Play DodgeBall</string>
+    <string name="class_warrior">Warrior</string>
+    <string name="class_rogue">Rogue</string>
+    <string name="class_healer">Healer</string>
+    <string name="menu_skill_tree">Skill Tree</string>
+    <string name="title_activity_skills">SkillsActivity</string>
 
 </resources>

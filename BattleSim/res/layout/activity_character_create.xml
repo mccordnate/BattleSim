@@ -25,214 +25,226 @@
         android:layout_alignBottom="@+id/name"
         android:layout_marginLeft="43dp"
         android:layout_toRightOf="@+id/name"
+        android:ems="10"
         android:inputType="text"
-        android:maxLength="16"
-        android:ems="10" >
-        
-       
+        android:maxLength="16" >
     </EditText>
-    
-    <TextView 
+
+    <TextView
         android:id="@+id/stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="40dp"
-        android:text=""/>
-    
+        android:text="" />
+
     <TextView
         android:id="@+id/str"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/stats"
         android:layout_marginTop="20dp"
-        android:text="@string/create_str"
-        />
-    
-    <Button 
+        android:text="@string/create_str" />
+
+    <Button
         android:id="@+id/strMinus"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="40dp"
-		android:layout_marginTop="10dp"
-		android:layout_below="@+id/stats"
         android:layout_alignBottom="@+id/str"
+        android:layout_below="@+id/stats"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/str"
-        android:text="-"
-        android:textSize="10pt"
-        android:padding="2dp"
         android:maxHeight="8dp"
         android:maxWidth="8dp"
         android:onClick="strMinus"
-        />
-            
-	<EditText 
-	    android:id="@+id/strbox"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_toRightOf="@+id/strMinus"
-	    android:layout_alignBottom="@+id/str"
-	    android:layout_marginTop="20dp"
-	    android:layout_marginLeft="20dp"
-	    android:inputType="number"
-	    android:clickable="false" 
-    	android:cursorVisible="false" 
-    	android:focusable="false" 
-    	android:focusableInTouchMode="false"
-    	android:text="0"
-	    />
-	
-	<Button 
+        android:padding="2dp"
+        android:text="-"
+        android:textSize="10pt" />
+
+    <EditText
+        android:id="@+id/strbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/str"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/strMinus"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
         android:id="@+id/strPlus"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="30dp"
-		android:layout_marginTop="10dp"
-		android:layout_below="@+id/stats"
         android:layout_alignBottom="@+id/strbox"
+        android:layout_below="@+id/stats"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/strbox"
-        android:text="+"
-        android:textSize="10pt"
-        android:padding="2dp"
         android:maxHeight="8dp"
         android:maxWidth="8dp"
         android:onClick="strPlus"
-        />
-	
-	<TextView
+        android:padding="2dp"
+        android:text="+"
+        android:textSize="10pt" />
+
+    <TextView
         android:id="@+id/agi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/str"
         android:layout_marginTop="20dp"
-        android:text="@string/create_agi"
-        />
-	
-	<Button 
+        android:text="@string/create_agi" />
+
+    <Button
         android:id="@+id/agiMinus"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="40dp"
-		android:layout_marginTop="10dp"
-		android:layout_below="@+id/strMinus"
         android:layout_alignBottom="@+id/agi"
+        android:layout_below="@+id/strMinus"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/agi"
-        android:text="-"
-        android:textSize="10pt"
-        android:padding="2dp"
         android:maxHeight="8dp"
         android:maxWidth="8dp"
         android:onClick="agiMinus"
-        />
-        
-	<EditText 
-	    android:id="@+id/agibox"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_toRightOf="@+id/agi"
-	    android:layout_alignBottom="@+id/agi"
-	    android:layout_marginTop="20dp"
-	    android:layout_marginLeft="100dp"
-	    android:inputType="number"
-	    android:clickable="false" 
-    	android:cursorVisible="false" 
-    	android:focusable="false" 
-    	android:focusableInTouchMode="false"
-    	android:text="0"
-	    />
-	
-	<Button 
+        android:padding="2dp"
+        android:text="-"
+        android:textSize="10pt" />
+
+    <EditText
+        android:id="@+id/agibox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/agi"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/agi"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
         android:id="@+id/agiPlus"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="30dp"
-		android:layout_marginTop="10dp"
-		android:layout_below="@+id/strPlus"
         android:layout_alignBottom="@+id/agibox"
+        android:layout_below="@+id/strPlus"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/agibox"
-        android:text="+"
-        android:textSize="10pt"
-        android:padding="2dp"
         android:maxHeight="4dp"
         android:maxWidth="4dp"
         android:onClick="agiPlus"
-        />
-	
-	<TextView
+        android:padding="2dp"
+        android:text="+"
+        android:textSize="10pt" />
+
+    <TextView
         android:id="@+id/def"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/agi"
         android:layout_marginTop="20dp"
-        android:text="@string/create_def"
-        />
-	
-	<Button 
+        android:text="@string/create_def" />
+
+    <Button
         android:id="@+id/defMinus"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="40dp"
-		android:layout_marginTop="10dp"
-		android:layout_below="@+id/agiMinus"
-		android:layout_alignBottom="@+id/def"
+        android:layout_alignBottom="@+id/def"
+        android:layout_below="@+id/agiMinus"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/def"
-        android:text="-"
-        android:textSize="10pt"
-        android:padding="2dp"
         android:maxHeight="4dp"
         android:maxWidth="4dp"
         android:onClick="defMinus"
-        
-        />
-        
-	<EditText 
-	    android:id="@+id/defbox"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_toRightOf="@+id/def"
-	    android:layout_alignBottom="@+id/def"
-	    android:layout_marginTop="20dp"
-	    android:layout_marginLeft="100dp"
-	    android:inputType="number"
-	    android:clickable="false" 
-    	android:cursorVisible="false" 
-    	android:focusable="false" 
-    	android:focusableInTouchMode="false"
-    	android:text="0"
-	    />
-	
-	<Button 
+        android:padding="2dp"
+        android:text="-"
+        android:textSize="10pt" />
+
+    <EditText
+        android:id="@+id/defbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/def"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/def"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
         android:id="@+id/defPlus"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="30dp"
-		android:layout_marginTop="10dp"
-		android:layout_below="@+id/agiPlus"
         android:layout_alignBottom="@+id/defbox"
+        android:layout_below="@+id/agiPlus"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/defbox"
-        android:text="+"
-        android:textSize="10pt"
-        android:padding="2dp"
         android:maxHeight="8dp"
         android:maxWidth="8dp"
         android:onClick="defPlus"
-        />
+        android:padding="2dp"
+        android:text="+"
+        android:textSize="10pt" />
 
-	<Button
-	    android:id="@+id/submitChar"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="375dp"
-	    android:text="@string/create_submit"
-	    android:onClick="submitChar"
-	    />
+    <Button
+        android:id="@+id/submitChar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="375dp"
+        android:onClick="submitChar"
+        android:text="@string/create_submit" />
+
+        <RadioGroup
+            android:id="@+id/classes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/namebox"
+            android:layout_below="@+id/defMinus"
+            android:layout_marginTop="26dp" >
+
+            <RadioButton
+                android:id="@+id/warrior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/class_warrior" />
+
+            <RadioButton
+                android:id="@+id/rogue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_rogue" />
+
+            <RadioButton
+                android:id="@+id/healer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_healer" />
+        </RadioGroup>
 
 </RelativeLayout>

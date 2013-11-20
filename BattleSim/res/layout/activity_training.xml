@@ -49,13 +49,33 @@
         android:text="@string/train_refill_time" />
     
     <Button 
-        android:id="@+id/genericTrain"
+        android:id="@+id/weightTrain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/refillTime"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:onClick="weightTrain"
+        android:text="@string/train_weights"/>
+    
+    <Button 
+        android:id="@+id/lapTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weightTrain"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:onClick="genericTrain"
-        android:text="Generic Training"/>
+        android:onClick="lapTrain"
+        android:text="@string/train_laps"/>
+    
+    <Button 
+        android:id="@+id/dodgeTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lapTrain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:onClick="dodgeTrain"
+        android:text="@string/train_dodgeball"/>
 
 </RelativeLayout>

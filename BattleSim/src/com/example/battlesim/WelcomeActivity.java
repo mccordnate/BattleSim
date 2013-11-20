@@ -72,6 +72,10 @@ public class WelcomeActivity extends Activity {
 		startActivity(new Intent(this, TrainingActivity.class));
 	}
 	
+	public void skills(View view){
+		startActivity(new Intent(this, SkillsActivity.class));
+	}
+	
 	public void deleteChar(View view){
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
 		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -109,7 +110,26 @@ public class CharacterCreate extends Activity {
 		EditText agiBox = (EditText) this.findViewById(R.id.agibox);
 		EditText defBox = (EditText) this.findViewById(R.id.defbox);
 		
-		Character character = new Character(nameBox.getText().toString(), Integer.parseInt((strBox.getText().toString())), Integer.parseInt((agiBox.getText().toString())), Integer.parseInt((defBox.getText().toString())));
+		RadioGroup classes = (RadioGroup) this.findViewById(R.id.classes);
+		
+		String s = "W";
+		
+		switch(classes.getCheckedRadioButtonId()){
+		case R.id.warrior:
+			s = "W";
+			break;
+		case R.id.rogue:
+			s = "R";
+			break;
+		case R.id.healer:
+			s = "H";
+			break;
+		default:
+			s = "W";
+			break;
+		}
+		
+		Character character = new Character(nameBox.getText().toString(), Integer.parseInt((strBox.getText().toString())), Integer.parseInt((agiBox.getText().toString())), Integer.parseInt((defBox.getText().toString())), s);
 		startActivity(new Intent(this, WelcomeActivity.class));
 		statInit = 15;
 		finish();

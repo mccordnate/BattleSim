@@ -84,8 +84,128 @@ public class TrainingActivity extends Activity {
 			}
 		});
 	}
+	
+	public void weightTrain(View view){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
+		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+		query.getFirstInBackground(new GetCallback<ParseObject>() {
+			public void done(ParseObject object, ParseException e) {
+				if (object != null) {
+					int currentE = object.getInt("energy");
+					if (currentE <= 0) {
+						Toast.makeText(getApplicationContext(),
+								"Uh oh! You're out of energy!",
+								Toast.LENGTH_LONG).show();
+					} else {
+						object.put("energy", currentE - 1);
+						TextView energyDisplay = (TextView) findViewById(R.id.numOfEnergy);
+						energyDisplay.setText(Integer.toString(currentE - 1));
+						if (currentE == 3) {
+							object.put("lastEnergyUse",
+									new Date(System.currentTimeMillis()));
+						}
+						
+						if(object.getInt("subStr") == 4){
+							object.put("str", object.getInt("str")+1);
+							object.put("subStr",0);
+						}else{
+							object.put("subStr", object.getInt("subStr")+1);
+						}
+						
+						try {
+							object.save();
+						} catch (ParseException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						getTime();
+					}
+				}
+			}
+		});
+	}
 
-	public void genericTrain(View view) {
+	public void lapTrain(View view){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
+		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+		query.getFirstInBackground(new GetCallback<ParseObject>() {
+			public void done(ParseObject object, ParseException e) {
+				if (object != null) {
+					int currentE = object.getInt("energy");
+					if (currentE <= 0) {
+						Toast.makeText(getApplicationContext(),
+								"Uh oh! You're out of energy!",
+								Toast.LENGTH_LONG).show();
+					} else {
+						object.put("energy", currentE - 1);
+						TextView energyDisplay = (TextView) findViewById(R.id.numOfEnergy);
+						energyDisplay.setText(Integer.toString(currentE - 1));
+						if (currentE == 3) {
+							object.put("lastEnergyUse",
+									new Date(System.currentTimeMillis()));
+						}
+						
+						if(object.getInt("subAgi") == 4){
+							object.put("agi", object.getInt("agi")+1);
+							object.put("subAgi",0);
+						}else{
+							object.put("subAgi", object.getInt("subAgi")+1);
+						}
+						
+						try {
+							object.save();
+						} catch (ParseException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						getTime();
+					}
+				}
+			}
+		});
+	}
+	
+	public void dodgeTrain(View view){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
+		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+		query.getFirstInBackground(new GetCallback<ParseObject>() {
+			public void done(ParseObject object, ParseException e) {
+				if (object != null) {
+					int currentE = object.getInt("energy");
+					if (currentE <= 0) {
+						Toast.makeText(getApplicationContext(),
+								"Uh oh! You're out of energy!",
+								Toast.LENGTH_LONG).show();
+					} else {
+						object.put("energy", currentE - 1);
+						TextView energyDisplay = (TextView) findViewById(R.id.numOfEnergy);
+						energyDisplay.setText(Integer.toString(currentE - 1));
+						if (currentE == 3) {
+							object.put("lastEnergyUse",
+									new Date(System.currentTimeMillis()));
+						}
+						
+						if(object.getInt("subDef") == 4){
+							object.put("def", object.getInt("def")+1);
+							object.put("subDef",0);
+						}else{
+							object.put("subDef", object.getInt("subDef")+1);
+						}
+						
+						try {
+							object.save();
+						} catch (ParseException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						getTime();
+					}
+				}
+			}
+		});
+	}
+	
+	/*public void genericTrain() {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Character");
 		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
 		query.getFirstInBackground(new GetCallback<ParseObject>() {
@@ -115,6 +235,6 @@ public class TrainingActivity extends Activity {
 				}
 			}
 		});
-	}
+	}*/
 
 }

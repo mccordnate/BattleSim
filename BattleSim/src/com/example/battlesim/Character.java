@@ -9,14 +9,16 @@ import com.parse.ParseUser;
 public class Character {
 	
 	private String name;
-	private int str, agi, def, hp=20, exp=0, level=1, wins = 0, losses = 0, energy = 3;
+	private int str, agi, def, subStr = 0, subAgi = 0, subDef = 0, hp=20, exp=0, level=1, wins = 0, losses = 0, energy = 3;
 	private Date lastEnergyUse = new Date(0);
+	private String classy;
 	
-	public Character(String n, int s, int a, int d){
+	public Character(String n, int s, int a, int d, String c){
 		this.name = n;
 		this.str = s;
 		this.agi = a;
 		this.def = d;
+		this.classy = c;
 		
 		ParseObject parseChar = new ParseObject("Character");
 		
@@ -25,9 +27,13 @@ public class Character {
 		parseChar.put("str",s);
 		parseChar.put("agi",a);
 		parseChar.put("def",d);
+		parseChar.put("subStr",subStr);
+		parseChar.put("subAgi", subAgi);
+		parseChar.put("subDef", subDef);
 		parseChar.put("hp",hp);
 		parseChar.put("exp",exp);
 		parseChar.put("level",level);
+		parseChar.put("class",classy);
 		parseChar.put("username",ParseUser.getCurrentUser().getUsername());
 		parseChar.put("energy",energy);
 		parseChar.put("lastEnergyUse",lastEnergyUse);

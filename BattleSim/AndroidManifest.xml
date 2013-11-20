@@ -42,6 +42,10 @@
             android:name="com.example.battlesim.TrainingActivity"
             android:label="@string/title_activity_training" >
         </activity>
+        <activity
+            android:name="com.example.battlesim.SkillsActivity"
+            android:label="@string/title_activity_skills" >
+        </activity>
     </application>
 
 </manifest>
