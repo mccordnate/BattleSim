@@ -36,7 +36,9 @@
     <string name="class_warrior">Warrior</string>
     <string name="class_rogue">Rogue</string>
     <string name="class_healer">Healer</string>
-    <string name="menu_skill_tree">Skill Tree</string>
+    <string name="menu_stats">Stats</string>
     <string name="title_activity_skills">SkillsActivity</string>
+    <string name="title_activity_stat">Stats</string>
+    <string name="title_activity_ad">AdActivity</string>
 
 </resources>

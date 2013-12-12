@@ -36,6 +36,8 @@ public class Character {
 		parseChar.put("class",classy);
 		parseChar.put("username",ParseUser.getCurrentUser().getUsername());
 		parseChar.put("energy",energy);
+		parseChar.put("wins",wins);
+		parseChar.put("losses",losses);
 		parseChar.put("lastEnergyUse",lastEnergyUse);
 		try {
 			parseChar.save();

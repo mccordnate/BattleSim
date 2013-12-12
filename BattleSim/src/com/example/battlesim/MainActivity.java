@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 	
 	public void openLogin(View view){
 		ParseUser currentUser = ParseUser.getCurrentUser();
-	    if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
+	    if ((currentUser != null) ) {
 	        // If user is already logged in through Facebook, skip login screen
 	      startActivity(new Intent(this, WelcomeActivity.class));
 	    }

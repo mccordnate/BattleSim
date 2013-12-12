@@ -1,6 +1,7 @@
 package com.example.battlesim;
 
 import java.util.List;
+import com.google.android.gms.ads.*;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +10,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +24,8 @@ import com.parse.ParseException;
 
 public class WelcomeActivity extends Activity {
 	private ParseObject parseChar = new ParseObject("Character");
+	private AdView adView;
+	private InterstitialAd interstitial;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,34 @@ public class WelcomeActivity extends Activity {
 		    }
 		  }
 		});
+		
+		interstitial = new InterstitialAd(this);
+	    interstitial.setAdUnitId("ca-app-pub-6919385704931086/2200429654");
+
+	    // Create ad request.
+	    AdRequest adRequest = new AdRequest.Builder().addTestDevice("95F2814F50DDBA35CAD96C7F6EB67074").build();
+
+	    // Begin loading your interstitial.
+	    interstitial.loadAd(adRequest);
+		
+//		adView = new AdView(this);
+//	    adView.setAdUnitId("ca-app-pub-6919385704931086/8563190853");
+//	    adView.setAdSize(AdSize.BANNER);
+//
+//	    // Lookup your LinearLayout assuming it's been given
+//	    // the attribute android:id="@+id/mainLayout".
+//	    LinearLayout layout = (LinearLayout)findViewById(R.id.rellay);
+//
+//	    // Add the adView to it.
+//	    layout.addView(adView);
+//
+//	    // Initiate a generic request.
+//	    AdRequest adRequest = new AdRequest.Builder()
+//	    .addTestDevice("95F2814F50DDBA35CAD96C7F6EB67074")
+//	    .build();
+//
+//	    // Load the adView with the ad request.
+//	    adView.loadAd(adRequest);
 	}
 
 	@Override
@@ -72,8 +105,8 @@ public class WelcomeActivity extends Activity {
 		startActivity(new Intent(this, TrainingActivity.class));
 	}
 	
-	public void skills(View view){
-		startActivity(new Intent(this, SkillsActivity.class));
+	public void stats(View view){
+		startActivity(new Intent(this, StatActivity.class));
 	}
 	
 	public void deleteChar(View view){
@@ -95,5 +128,20 @@ public class WelcomeActivity extends Activity {
 		    }
 		  }
 		});
+	}
+	
+	public void leaderboard(View view){
+		startActivity(new Intent(this, LeaderboardActivity.class));
+	}
+	
+	public void ads(View view){
+		displayInterstitial();
+		startActivity(new Intent(this, AdActivity.class));
+	}
+	
+	public void displayInterstitial() {
+	    if (interstitial.isLoaded()) {
+	      interstitial.show();
+	    }
 	}
 }

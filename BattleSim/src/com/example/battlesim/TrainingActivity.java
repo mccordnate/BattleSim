@@ -105,7 +105,7 @@ public class TrainingActivity extends Activity {
 									new Date(System.currentTimeMillis()));
 						}
 						
-						if(object.getInt("subStr") == 4){
+						if(object.getInt("subStr") == 2){
 							object.put("str", object.getInt("str")+1);
 							object.put("subStr",0);
 						}else{
@@ -145,7 +145,7 @@ public class TrainingActivity extends Activity {
 									new Date(System.currentTimeMillis()));
 						}
 						
-						if(object.getInt("subAgi") == 4){
+						if(object.getInt("subAgi") == 2){
 							object.put("agi", object.getInt("agi")+1);
 							object.put("subAgi",0);
 						}else{
@@ -185,7 +185,7 @@ public class TrainingActivity extends Activity {
 									new Date(System.currentTimeMillis()));
 						}
 						
-						if(object.getInt("subDef") == 4){
+						if(object.getInt("subDef") == 2){
 							object.put("def", object.getInt("def")+1);
 							object.put("subDef",0);
 						}else{
